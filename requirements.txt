@@ -1,0 +1,11 @@
+fastapi 
+uvicorn
+sqlalchemy
+psycopg2
+python-dotenv
+dotenv
+streamlit 
+requests
+pandas 
+datetime
+dotenv
