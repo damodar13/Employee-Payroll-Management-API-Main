@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()  # Load environment variables from .env file
 
-API_URL = os.getenv("API__URL", "http://127.0.0.1:8000") 
+API_URL = os.getenv("API_URL", "http://127.0.0.1:8000") 
 
 st.set_page_config(
     page_title="Employee & Payroll Portal",
@@ -47,6 +47,9 @@ st.markdown("""
         font-size: 16px;
         font-weight: 500;
     }
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
     </style>
 """, unsafe_allow_html=True)
 
@@ -149,7 +152,7 @@ with tab_emps:
             if d_res.status_code == 200: 
                 dept_options = {d["name"]: d["id"] for d in d_res.json()} 
         except requests.exceptions.RequestException:
-            pass
+            st.sidebar.error("Cannot fetch departments. Employee onboarding may be limited.")
 
         with st.form("add_emp_form", clear_on_submit=True):
             st.subheader("Personal & Professional Details")
