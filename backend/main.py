@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from typing import List, Optional
-from fastapi.responses import RediretResponse
+from fastapi.responses import RedirectResponse
 
 from database import Base, engine, get_db
 from models import Department, Employee, Payslip
@@ -20,7 +20,7 @@ app = FastAPI(title="Employee & Payroll Management API")
 
 @app.get("/",include_in_schema = False)
 def redirect_to_docs():
-    return RediretResponse(url="/docs")
+    return RedirectResponse(url="/docs")
 
 # ==================== DEPARTMENTS ====================
 
