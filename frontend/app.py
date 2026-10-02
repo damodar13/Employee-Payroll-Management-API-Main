@@ -57,7 +57,7 @@ with st.sidebar:
     st.title("💼 Workspace OS")
     st.markdown("Employee & Payroll Management System") 
     st.divider()
-    st.caption(f"Connected to API: `{API_URL}`")
+    
 
 # Create tabs mirroring the 3-table API architecture[cite: 1]
 tab_depts, tab_emps, tab_payroll = st.tabs(
